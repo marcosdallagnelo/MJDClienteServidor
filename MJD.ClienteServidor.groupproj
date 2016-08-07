@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{FAA2FF89-6CB0-40B6-95C3-6594E1DC606D}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Cliente\MJD.Cliente.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Servidor\MJD.Servidor.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="MJD_Cliente">
+        <MSBuild Projects="Cliente\MJD.Cliente.dproj"/>
+    </Target>
+    <Target Name="MJD_Cliente:Clean">
+        <MSBuild Projects="Cliente\MJD.Cliente.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MJD_Cliente:Make">
+        <MSBuild Projects="Cliente\MJD.Cliente.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MJD_Servidor">
+        <MSBuild Projects="Servidor\MJD.Servidor.dproj"/>
+    </Target>
+    <Target Name="MJD_Servidor:Clean">
+        <MSBuild Projects="Servidor\MJD.Servidor.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MJD_Servidor:Make">
+        <MSBuild Projects="Servidor\MJD.Servidor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="MJD_Cliente;MJD_Servidor"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="MJD_Cliente:Clean;MJD_Servidor:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="MJD_Cliente:Make;MJD_Servidor:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

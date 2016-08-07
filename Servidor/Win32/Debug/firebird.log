@@ -1,0 +1,14 @@
+
+MARCOS-PC	Sat Aug 11 11:26:14 2012
+	INET/inet_error: connect errno = 10061
+
+
+MARCOS-PC	Sat Aug 11 11:26:17 2012
+	INET/inet_error: connect errno = 10061
+
+
+MARCOS-PC	Fri May 09 18:32:23 2014
+	I/O error during "ReadFile" operation for file "C:\OIBAR\EMERGENCIA.FDB"
+	Error while trying to read from file
+	Final do arquivo alcançado. 
+
